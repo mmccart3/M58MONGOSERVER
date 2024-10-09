@@ -11,6 +11,21 @@ require("./db/connection");
 
 const Book = require("./db/models/bookmodel");
 
+app.get("/listBooks",
+    async function listBooks(req,res) {
+        try {
+            const output = await Book.find({})
+            res.status(200).json(output)
+        } catch (error) {
+            console.log(error);
+            const responseMessage = {
+                message: `Unable to find book list`
+            }
+            res.status(500).json(responseMessage)
+        }
+    }
+)
+
 app.post("/addBook", async (req,res) => {
     try {
         const result = await Book.create(
