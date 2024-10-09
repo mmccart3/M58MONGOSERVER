@@ -53,8 +53,21 @@ app.post("/addBook", async (req,res) => {
 }
 )
 
+app.get("/getSingleBook", async function getSingleBook(req,res) {
+    // use mongoose find or findOne
+})
 
+app.put("/updateAuthor", async function updateAuthor(req,res) {
+    // use mongoose updateOne
+})
 
+app.put("/updateGenre", async function updateGenre(req,res) {
+    // use mongoose updateOne
+})
+
+app.delete("/deleteBook", async function deleteBook(req,res) {
+    // use mongoose deleteOne
+})
 
 
 app.get("/health", (req,res) => {res.send("API is healthy")})
